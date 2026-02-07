@@ -913,7 +913,8 @@ func (d *Downloader) findAncestorBinarySearch(p *peerConnection, mode SyncMode, 
 				headers := packet.(*headerPack).headers
 				if len(headers) != 1 {
 					p.log.Warn("Multiple headers for single request", "headers", len(headers))
-					return 0, fmt.Errorf("%w: multiple headers (%d) for single request", errBadPeer, len(headers))
+					//return 0, fmt.Errorf("%w: multiple headers (%d) for single request", errBadPeer, len(headers))
+					break
 				}
 				arrived = true
 
